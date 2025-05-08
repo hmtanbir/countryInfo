@@ -1,7 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This README would normally document whatever steps are necessary to get the application up and running.
+
+![Screenshot 2025-05-08 at 8 34 26 PM](https://github.com/user-attachments/assets/113ded56-1e24-4571-a4f9-33465ac38457)
+
 
 
 ##### Prerequisites
