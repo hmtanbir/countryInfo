@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block body %}
+    <H1>{{ country.name.common }} Details</H1>
+
+    <h4>Region: {{ country.region }}</h4>
+    <h3>Spoken Languages:</h3>
+    <ul>
+    {% for language in languages %}
+       <li>{{ language }}</li>
+    {% empty %}
+        <li>No Language.</li>
+    {% endfor %}
+    </ul>
+
+
+    <h4>Other Countries in {{ country.region }} Region:</h4>
+    <ul>
+    {% for item in  same_region_countries %}
+        <li>{{ item.name.common }}</li>
+    {% empty %}
+        <li>No other countries in this region.</li>
+    {% endfor %}
+    </ul>
+
+{% endblock body %}
