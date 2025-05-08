@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block body %}
+  <h1>Country List</h1>
+    <table id="countryList" class="table table-striped table-bordered nowrap">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>cc2</th>
+                <th>capital</th>
+                <th>population</th>
+                <th>timezone</th>
+                <th>flag</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for country in countries %}
+            <tr>
+                <td>{{ country.name.common }}</td>
+                <td>{{ country.cca2 }}</td>
+                <td>{{ country.capital.0 }}</td>
+                <td>{{ country.population }}</td>
+                <td>{{ country.timezones.0 }}</td>
+                <td><img src="{{ country.flags.svg }}" width="40" alt="{{ country.name.common }}"/></td>
+                <td>
+                    <a href="/countries/{{ country.id }}"> <button class="btn btn-sm btn-primary details-btn">Details</button></a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock body %}
+
+{% block customJS %}
+    <script>
+    $('#countryList').DataTable({
+    responsive: true
+});
+
+</script>
+{% endblock customJS %}
