@@ -2,11 +2,21 @@
 
 This README would normally document whatever steps are necessary to get the application up and running.
 
-![Screenshot 2025-05-08 at 8 34 26 PM](https://github.com/user-attachments/assets/113ded56-1e24-4571-a4f9-33465ac38457)
+## Login Page
+
+![Screenshot 2025-05-08 at 9 17 12 PM](https://github.com/user-attachments/assets/67f28ea2-3b3f-4d41-8877-e12fb3b2cce4)
+
+## Country List Page
+
+![Screenshot 2025-05-08 at 9 18 06 PM](https://github.com/user-attachments/assets/c4e9d9cc-1a9c-4e26-a69b-d8675317e01a)
 
 
+## Country Details Page
 
-##### Prerequisites
+![Screenshot 2025-05-08 at 9 18 31 PM](https://github.com/user-attachments/assets/4a71131c-e17d-404b-b69a-cf8a0d475f9b)
+
+
+### Prerequisites
 The setup steps expect following tools installed on the system.
 
 - Python >= [3.9.6](javascript:void(0);)
@@ -31,25 +41,25 @@ The setup steps expect following tools installed on the system.
 
 ## Installation
 
-##### Create a new environment
+### Create a new environment
 
 ```
 python3 -m venv countryAPI
 ```
 
-##### Activate the environment
+### Activate the environment
 
 ```
 source countryAPI/bin/activate
 ```
 
-##### Clone the project repo
+### Clone the project repo
 
 ```
 https://github.com/hmtanbir/countryInfo.git
 ```
 
-##### Enter into the project repo
+### Enter into the project repo
 
 ```
 cd countryInfo
@@ -73,22 +83,22 @@ pip install -r requirement.txt
 
 You can create using DB Client like DBeaver or you can use shell command
 
-#### Enter into postgresql shell:
+### Enter into postgresql shell:
 ```
 psql -U postgres
 ```
 
-#### Now create the database from the shell:
+### Now create the database from the shell:
 
 ```
 CREATE DATABASE countryinfo;
 ```
-#### Now add permission to the database from the shell:
+### Now add permission to the database from the shell:
 ```
 GRANT ALL PRIVILEGES ON DATABASE countryinfo TO postgres;
 ```
 
-#### exit database from the shell:
+### exit database from the shell:
 
 ```
 \q
@@ -107,22 +117,21 @@ python manage.py migrate
 python manage.py createsuperuser
 ```
 
-#### Now Import countries data into the db:
+### Now Import countries data into the db:
 
 ```
 python manage.py import_countries
 ```
 
-#### Now run the server:
+### Now run the server:
 
 ```
 python manage.py runserver
 ```
 
-#### open browser and click:
+### Open browser and click:
 
 Now visit [localhost:8000](http://localhost:8000)
-
 
 
 
