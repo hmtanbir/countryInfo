@@ -117,6 +117,10 @@ python manage.py import_countries
 python manage.py runserver
 ```
 
+#### open browser and click:
+
+Now visit [localhost:8000](http://localhost:8000)
+
 
 
 
