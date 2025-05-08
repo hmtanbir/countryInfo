@@ -11,16 +11,16 @@ def fetch_data():
       response = requests.get(url)
       print("Countries data fetched successfully.")
       return response.json()
-    except Exception, e:
-      raise CommandError(e.message)
+    except Exception:
+      raise CommandError(Exception.message)
 
 def clear_db():
     try:
         print("Clearing old db data...")
         Country.objects.all().delete()
         print("Old data cleared successfully.")
-    except Exception, e:
-        raise CommandError(e.message)
+    except Exception:
+        raise CommandError(Exception.message)
 
 def import_data(data):
     try:
@@ -64,8 +64,8 @@ def import_data(data):
                 postalCode=item.get('postalCode')
             )
         print("Data imported  in DB successfully.")
-    except Exception, e:
-        raise CommandError(e.message)
+    except Exception:
+        raise CommandError(Exception.message)
 
 class Command(BaseCommand):
     help = 'Fetches country data and imports in Database table'
@@ -75,8 +75,5 @@ class Command(BaseCommand):
             data = fetch_data()
             clear_db()
             import_data(data)
-        except Exception, e:
-            raise CommandError(e.message)
-
-
-
+        except Exception:
+            raise CommandError(Exception.message)

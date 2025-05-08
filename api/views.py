@@ -6,6 +6,8 @@ from rest_framework import status
 from rest_framework.generics import get_object_or_404
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework_simplejwt.authentication import JWTAuthentication
+from rest_framework.permissions import IsAuthenticated
 
 from api.serializers import CountrySerializer
 from country.models import Country
@@ -13,6 +15,9 @@ from country.models import Country
 # Create your views here.
 
 class CountryAPI(APIView):
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated]
+
     def get(self, request):
         country_id = request.query_params.get('id')
         country_name = request.query_params.get('name')
