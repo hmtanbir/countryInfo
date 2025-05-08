@@ -6,7 +6,7 @@ from django.db import models
 
 # Create your models here.
 class Country(models.Model):
-    name = JSONField(blank=False, null=False)
+    name = JSONField(blank=True, null=True)
     tld = ArrayField(models.CharField(max_length=100), blank=True, null=True)
     cca2 = models.CharField(max_length=100, null=True)
     ccn3 = models.CharField(max_length=100, null=True)
